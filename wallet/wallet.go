@@ -13,22 +13,20 @@ import (
 	// "github.com/HcashOrg/hcashd/chaincfg/chainhash"
 	"net"
 	"net/http"
-
+	"os"
 	"encoding/json"
 	"bytes"
 	"crypto/tls"
 	"crypto/x509"
 	"strings"
-	"io/ioutil"
 	"github.com/HcashOrg/hcashutil"
 	"github.com/HcashOrg/hcashd/hcashjson"
 	"github.com/HcashOrg/hcashrpcclient"
-	"github.com/HcashOrg/hcashutil"
 	"github.com/btcsuite/go-socks/socks"
 )
-func showRet(strResult string) {
+func showRet(result []byte) {
 	// Choose how to display the result based on its type.
-	// strResult := string(result)
+	strResult := string(result)
 	if strings.HasPrefix(strResult, "{") || strings.HasPrefix(strResult, "[") {
 		var dst bytes.Buffer
 		if err := json.Indent(&dst, result, "", "  "); err != nil {

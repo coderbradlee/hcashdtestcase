@@ -55,6 +55,6 @@ func Testtest() {
 		fmt.Fprintln(os.Stderr, err)
 		// os.Exit(1)
 	}
-	strResult := string(result)
-	showRet(strResult)
+	// strResult := string(result)
+	showRet(result)
 }
