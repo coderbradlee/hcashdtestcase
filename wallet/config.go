@@ -184,7 +184,7 @@ func fileExists(name string) bool {
 // The above results in functioning properly without any config settings
 // while still allowing the user to override settings with config files and
 // command line options.  Command line options always take precedence.
-func loadConfig() (*config, []string, error) {
+func loadConfig(wallet bool) (*config, []string, error) {
 	// Default config.
 	fmt.Println(defaultConfigFile)
 	cfg := config{
@@ -193,7 +193,7 @@ func loadConfig() (*config, []string, error) {
 		RPCCert:         defaultRPCCertFile,
 		WalletRPCServer: defaultWalletRPCServer,
 	}
-
+	cfg.Wallet=wallet
 	// Pre-parse the command line options to see if an alternative config
 	// file, the version flag, or the list commands flag was specified.  Any
 	// errors aside from the help message error can be ignored here since

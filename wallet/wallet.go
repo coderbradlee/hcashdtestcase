@@ -35,12 +35,12 @@ func handleCmd(cmd interface{}) {
 
 	// Send the JSON-RPC request to the server using the user-specified
 	// connection configuration.
-	connCfg,str,err:=loadConfig()
+	connCfg,str,err:=loadConfig(true)
 	if err!=nil{
 		fmt.Println(err)
 	}
 	fmt.Println(str)
-	connCfg.Wallet=true
+	// connCfg.Wallet=true
 	result, err := sendPostRequest(marshalledJSON, connCfg)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
