@@ -9,7 +9,7 @@ import (
 	"io/ioutil"
 	"log"
 	"path/filepath"
-	// "time"
+	"fmt"
 	// "github.com/HcashOrg/hcashd/chaincfg/chainhash"
 	"net"
 	"net/http"
@@ -21,6 +21,7 @@ import (
 	"github.com/HcashOrg/hcashd/hcashjson"
 	"github.com/HcashOrg/hcashrpcclient"
 	"github.com/HcashOrg/hcashutil"
+	"github.com/btcsuite/go-socks/socks"
 )
 func newHTTPClient(cfg *config) (*http.Client, error) {
 	// Configure proxy if needed.
