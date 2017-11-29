@@ -5,9 +5,9 @@
 package wallet
 
 import (
-	"bytes"
-	"encoding/hex"
-	"strings"
+	// "bytes"
+	// "encoding/hex"
+	// "strings"
 	"testing"
 )
 

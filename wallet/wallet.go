@@ -11,8 +11,8 @@ import (
 	"io/ioutil"
 	"log"
 	"path/filepath"
-	"time"
-	"github.com/HcashOrg/hcashd/chaincfg/chainhash"
+	// "time"
+	// "github.com/HcashOrg/hcashd/chaincfg/chainhash"
 )
 func test2() {
 	hcashdHomeDir := hcashutil.AppDataDir(".hcashd", false)
