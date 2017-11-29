@@ -73,7 +73,7 @@ func showRet(result []byte) {
 	} else if strResult != "null" {
 		fmt.Println(strResult)
 	}
-	fmt.Prinln("*************************************")
+	fmt.Println("*************************************")
 }
 func newHTTPClient(cfg *config) (*http.Client, error) {
 	// Configure proxy if needed.
