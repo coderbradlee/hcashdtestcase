@@ -177,19 +177,19 @@ func TestAll(t *testing.T) {
 				Address: "1Address",
 			},
 		},
-		// {
-		// 	name: "estimatefee",
-		// 	newCmd: func() (interface{}, error) {
-		// 		return hcashjson.NewCmd("estimatefee", 6)
-		// 	},
-		// 	staticCmd: func() interface{} {
-		// 		return hcashjson.NewEstimateFeeCmd(6)
-		// 	},
-		// 	marshalled: `{"jsonrpc":"1.0","method":"estimatefee","params":[6],"id":1}`,
-		// 	unmarshalled: &hcashjson.EstimateFeeCmd{
-		// 		NumBlocks: 6,
-		// 	},
-		// },
+		{
+			name: "estimatefee",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("estimatefee", 6)
+			},
+			staticCmd: func() interface{} {
+				return hcashjson.NewEstimateFeeCmd(6)
+			},
+			marshalled: `{"jsonrpc":"1.0","method":"estimatefee","params":[6],"id":1}`,
+			unmarshalled: &hcashjson.EstimateFeeCmd{
+				NumBlocks: 6,
+			},
+		},
 		// {
 		// 	name: "estimatepriority",
 		// 	newCmd: func() (interface{}, error) {
