@@ -37,15 +37,15 @@ func Testtest() {
 	// Create a new RPC client using websockets.  Since this example is
 	// not long-lived, the connection will be closed as soon as the program
 	// exits.
-	connCfg := &hcashrpcclient.ConnConfig{
-		Host:         "localhost:12010",
-		Endpoint:     "ws",
-		User:         "bitcoinrpc",
-		Pass:         "123456",
-		Certificates: certs,
-	}
+	// connCfg := &hcashrpcclient.ConnConfig{
+	// 	Host:         "localhost:12010",
+	// 	Endpoint:     "ws",
+	// 	User:         "bitcoinrpc",
+	// 	Pass:         "123456",
+	// 	Certificates: certs,
+	// }
 
-	cmd:=hcashjson.NewCmd("getbestblockhash")
+	cmd,_:=hcashjson.NewCmd("getbestblockhash")
 	marshalledJSON, err := hcashjson.MarshalCmd(1, cmd)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
@@ -54,6 +54,7 @@ func Testtest() {
 
 	// Send the JSON-RPC request to the server using the user-specified
 	// connection configuration.
+	connCfg,_,_:=loadConfig()
 	result, err := sendPostRequest(marshalledJSON, connCfg)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
