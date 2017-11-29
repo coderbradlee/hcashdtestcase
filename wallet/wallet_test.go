@@ -172,6 +172,18 @@ func TestAll(t *testing.T) {
 			},
 		},
 		{
+			name: "getmasterpubkey",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("getmasterpubkey", "default")
+			},
+		},
+		{
+			name: "getmasterpubkey",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("getmasterpubkey", "test")
+			},
+		},
+		{
 			name: "addmultisigaddress",
 			newCmd: func() (interface{}, error) {
 				return hcashjson.NewCmd("addmultisigaddress", 2, []string{"HsLP3v6bHgM7zsKk6tJva3PKaXbeZiNLxgo", "HsagDCjWocmNtpsNyMFvRRz9k39gTKjCdTC"})
