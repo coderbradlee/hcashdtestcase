@@ -118,6 +118,24 @@ func TestAll(t *testing.T) {
 		unmarshalled interface{}
 	}{
 		{
+			name: "getaccount",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("getaccount", "HsLP3v6bHgM7zsKk6tJva3PKaXbeZiNLxgo")
+			},
+		},
+		{
+			name: "getaccount",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("getaccount", "HsagDCjWocmNtpsNyMFvRRz9k39gTKjCdTC")
+			},
+		},
+		{
+			name: "getaccount",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("getaccount", "HsEvRq9fxQ4pW5AJr1Cffia3zzepEELiQry")
+			},
+		},
+		{
 			name: "addmultisigaddress",
 			newCmd: func() (interface{}, error) {
 				return hcashjson.NewCmd("addmultisigaddress", 2, []string{"HsLP3v6bHgM7zsKk6tJva3PKaXbeZiNLxgo", "HsagDCjWocmNtpsNyMFvRRz9k39gTKjCdTC"})
