@@ -142,6 +142,12 @@ func TestAll(t *testing.T) {
 			},
 		},
 		{
+			name: "listaccounts",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("listaccounts")
+			},
+		},
+		{
 			name: "getaccount",
 			newCmd: func() (interface{}, error) {
 				return hcashjson.NewCmd("getaccount", "HsLP3v6bHgM7zsKk6tJva3PKaXbeZiNLxgo")
