@@ -1,30 +1,31 @@
 //注释掉hcashd里面dns的代码，启动如下就为私链
 
 
-/root/gopath/src/github.com/HcashOrg/hcashd/hcashd --listen=127.0.0.1:11010 --rpclisten=127.0.0.1:12010 --rpcuser=bitcoinrpc --rpcpass=123456 --blockmaxsize=999000 --notls
+/root/gopath/src/github.com/HcashOrg/hcashd/hcashd --listen=127.0.0.1:11010 --rpclisten=127.0.0.1:12010 --rpcuser=bitcoinrpc --rpcpass=123456 --blockmaxsize=999000
 
 /root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:12010 --rpcuser=bitcoinrpc --rpcpass=123456 getinfo
 
 //wallet启动
 /root/gopath/src/github.com/HcashOrg/hcashwallet/hcashwallet -C ./hcashwallet.conf --create
-/root/gopath/src/github.com/HcashOrg/hcashwallet/hcashwallet -C ./hcashwallet.conf --noservertls --noclienttls
+/root/gopath/src/github.com/HcashOrg/hcashwallet/hcashwallet -C ./hcashwallet.conf
+
 //连接到wallet执行
-/root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:14010 --rpcuser=bitcoinrpc --rpcpass=123456 --notls --wallet createnewaccount "test"
+/root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:14010 --rpcuser=bitcoinrpc --rpcpass=123456 --wallet createnewaccount "test"
 
-/root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:14010 --rpcuser=bitcoinrpc --rpcpass=123456 --notls --wallet -l
+/root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:14010 --rpcuser=bitcoinrpc --rpcpass=123456 --wallet -l
 
-/root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:14010 --rpcuser=bitcoinrpc --rpcpass=123456 --notls --wallet getnewaddress
+/root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:14010 --rpcuser=bitcoinrpc --rpcpass=123456 --wallet getnewaddress
 HsEvRq9fxQ4pW5AJr1Cffia3zzepEELiQry
 
-/root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:14010 --rpcuser=bitcoinrpc --rpcpass=123456 --notls generate 10
+/root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:14010 --rpcuser=bitcoinrpc --rpcpass=123456 generate 10
 
-/root/gopath/src/github.com/HcashOrg/hcashd/hcashd --listen=127.0.0.1:11010 --rpclisten=127.0.0.1:12010 --rpcuser=bitcoinrpc --rpcpass=123456 --blockmaxsize=999000 --notls --generate --miningaddr=HsEvRq9fxQ4pW5AJr1Cffia3zzepEELiQry
+/root/gopath/src/github.com/HcashOrg/hcashd/hcashd --listen=127.0.0.1:11010 --rpclisten=127.0.0.1:12010 --rpcuser=bitcoinrpc --rpcpass=123456 --blockmaxsize=999000 --generate --miningaddr=HsEvRq9fxQ4pW5AJr1Cffia3zzepEELiQry
 
-/root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:14010 --rpcuser=bitcoinrpc --rpcpass=123456 --notls --wallet getbalance
+/root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:14010 --rpcuser=bitcoinrpc --rpcpass=123456 --wallet getbalance
 
-/root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:14010 --rpcuser=bitcoinrpc --rpcpass=123456 --notls --wallet setgenerate generate
+/root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:14010 --rpcuser=bitcoinrpc --rpcpass=123456 --wallet setgenerate generate
 
-/root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:14010 --rpcuser=bitcoinrpc --rpcpass=123456 --notls --wallet getreceivedbyaccount default
+/root/gopath/src/github.com/HcashOrg/hcashd/hcashctl --rpcserver=127.0.0.1:14010 --rpcuser=bitcoinrpc --rpcpass=123456 --wallet getreceivedbyaccount default
 
 
 //hcashd 12010 hcashwallet 14010

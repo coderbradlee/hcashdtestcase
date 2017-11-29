@@ -3,11 +3,12 @@ package main
 import (
 	"github.com/HcashOrg/hcashrpcclient"
 	"github.com/HcashOrg/hcashutil"
-	"github.com/HcashOrg/hcashd/wire"
+	// "github.com/HcashOrg/hcashd/wire"
 	"io/ioutil"
 	"log"
 	"path/filepath"
 	"time"
+	"github.com/HcashOrg/hcashd/chaincfg/chainhash"
 )
 func test1() {
 	// Load the certificate for the TLS connection which is automatically
@@ -39,7 +40,7 @@ func test1() {
 	// command with the verbose flag set to true and the verboseTx flag
 	// set to false.
 	genesisHashStr := "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
-	blockHash, err := wire.NewShaHashFromStr(genesisHashStr)
+	blockHash, err := chainhash.NewHashFromStr(genesisHashStr)
 	if err != nil {
 		log.Fatal(err)
 	}
