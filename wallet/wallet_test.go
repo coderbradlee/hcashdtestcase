@@ -11,9 +11,9 @@ import (
 	"testing"
 	// "bufio"
 	
-	"fmt"
+	// "fmt"
 	// "io"
-	"os"
+	// "os"
 	
 	// "github.com/HcashOrg/hcashrpcclient"
 	"github.com/HcashOrg/hcashd/hcashjson"
@@ -103,10 +103,10 @@ import (
 // walletpassphrase "passphrase" timeout
 // walletpassphrasechange "oldpassphrase" "newpassphrase"
 
-func TestDecodeHex(t *testing.T) {
-	test2()
-}
-func Testall() {
+// func TestDecodeHex(t *testing.T) {
+// 	test2()
+// }
+func Testall(t *testing.T) {
 	t.Parallel()
 
 	testID := int(1)
