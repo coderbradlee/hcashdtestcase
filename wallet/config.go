@@ -29,9 +29,9 @@ const (
 )
 
 var (
-	hcashdHomeDir            = hcashutil.AppDataDir(".hcashd", false)
+	hcashdHomeDir            = hcashutil.AppDataDir("/root/.hcashd", false)
 	hcashctlHomeDir          = hcashutil.AppDataDir("/hcashdtestcase/wallet", false)
-	hcashwalletHomeDir       = hcashutil.AppDataDir(".hcashwallet", false)
+	hcashwalletHomeDir       = hcashutil.AppDataDir("/root/.hcashwallet", false)
 	defaultConfigFile      = filepath.Join(hcashctlHomeDir, "hcashctl.conf")
 	defaultRPCServer       = "localhost"
 	defaultWalletRPCServer = "localhost"
