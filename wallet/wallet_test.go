@@ -20,7 +20,7 @@ import (
 	"log"
 	"io/ioutil"
 	"github.com/HcashOrg/hcashutil"
-	"github.com/HcashOrg/hcashrpcclient"
+	// "github.com/HcashOrg/hcashrpcclient"
 	"github.com/HcashOrg/hcashd/hcashjson"
 )
 
