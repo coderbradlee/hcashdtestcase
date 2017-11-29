@@ -117,6 +117,13 @@ func TestAll(t *testing.T) {
 		marshalled   string
 		unmarshalled interface{}
 	}{
+
+		{
+			name: "accountaddressindex",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("accountaddressindex", "test",1)
+			},
+		},
 		{
 			name: "getaccount",
 			newCmd: func() (interface{}, error) {

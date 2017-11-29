@@ -31,7 +31,8 @@ HsEvRq9fxQ4pW5AJr1Cffia3zzepEELiQry
 //hcashd 12010 hcashwallet 14010
 
 目前问题：
-1、hcashctl --wallet getaccountaddress default 没有指定的挖矿地址HsEvRq9fxQ4pW5AJr1Cffia3zzepEELiQry
-但是hcashctl --wallet getaccount HsEvRq9fxQ4pW5AJr1Cffia3zzepEELiQry又返回default
+1、hcashwallet是否是HD钱包，其中的命令getmasterpubkey需要加参数account，返回值的含义是
+	master/purposecode/coincode/account 这个路径的公钥？
 2、hcashwallet gui启动会启动hcashd、hcashwallet及hcashctl，其中hcashd没挖矿的情况下占用cpu高，但linux版的没问题
 
+3、
