@@ -24,10 +24,10 @@ func test1() {
 	// not long-lived, the connection will be closed as soon as the program
 	// exits.
 	connCfg := &hcashrpcclient.ConnConfig{
-		Host:         "localhost:19109",
+		Host:         "localhost:12101",
 		Endpoint:     "ws",
-		User:         "yourrpcuser",
-		Pass:         "yourrpcpass",
+		User:         "bitcoinrpc",
+		Pass:         "123456",
 		Certificates: certs,
 	}
 	client, err := hcashrpcclient.New(connCfg, nil)
