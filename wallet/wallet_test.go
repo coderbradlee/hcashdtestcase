@@ -160,6 +160,18 @@ func TestAll(t *testing.T) {
 			},
 		},
 		{
+			name: "getbalance",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("getbalance", "test")
+			},
+		},
+		{
+			name: "getbalance",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("getbalance", "default")
+			},
+		},
+		{
 			name: "addmultisigaddress",
 			newCmd: func() (interface{}, error) {
 				return hcashjson.NewCmd("addmultisigaddress", 2, []string{"HsLP3v6bHgM7zsKk6tJva3PKaXbeZiNLxgo", "HsagDCjWocmNtpsNyMFvRRz9k39gTKjCdTC"})
