@@ -118,6 +118,7 @@ type config struct {
 // normalizeAddress returns addr with the passed default port appended if
 // there is not already a port specified.
 func normalizeAddress(addr string, useTestNet, useSimNet, useWallet bool) string {
+	
 	_, _, err := net.SplitHostPort(addr)
 	if err != nil {
 		var defaultPort string
@@ -293,8 +294,8 @@ func loadConfig() (*config, []string, error) {
 
 	// Add default port to RPC server based on --testnet and --wallet flags
 	// if needed.
-	cfg.RPCServer = normalizeAddress(cfg.RPCServer, cfg.TestNet,
-		cfg.SimNet, cfg.Wallet)
+	// cfg.RPCServer = normalizeAddress(cfg.RPCServer, cfg.TestNet,
+	// 	cfg.SimNet, cfg.Wallet)
 
 	return &cfg, remainingArgs, nil
 }
