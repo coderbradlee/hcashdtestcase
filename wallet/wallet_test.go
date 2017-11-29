@@ -106,7 +106,7 @@ import (
 // func TestDecodeHex(t *testing.T) {
 // 	test2()
 // }
-func Testall(t *testing.T) {
+func TestAll(t *testing.T) {
 	t.Parallel()
 
 	// testID := int(1)
