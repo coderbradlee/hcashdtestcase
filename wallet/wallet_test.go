@@ -136,9 +136,9 @@ func TestAll(t *testing.T) {
 			},
 		},
 		{
-			name: "accountsyncaddressindex",
+			name: "createnewaccount",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("accountsyncaddressindex", "test",0,1)
+				return hcashjson.NewCmd("createnewaccount", "test1")
 			},
 		},
 		{
