@@ -24,6 +24,26 @@ import (
 	"github.com/HcashOrg/hcashrpcclient"
 	"github.com/btcsuite/go-socks/socks"
 )
+func handleCmd(cmd interface{}) {
+	
+	// cmd,_:=hcashjson.NewCmd("getbestblockhash")
+	marshalledJSON, err := hcashjson.MarshalCmd(1, cmd)
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		// os.Exit(1)
+	}
+
+	// Send the JSON-RPC request to the server using the user-specified
+	// connection configuration.
+	connCfg,_,_:=loadConfig()
+	result, err := sendPostRequest(marshalledJSON, connCfg)
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		// os.Exit(1)
+	}
+	// strResult := string(result)
+	showRet(result)
+}
 func showRet(result []byte) {
 	// Choose how to display the result based on its type.
 	strResult := string(result)
