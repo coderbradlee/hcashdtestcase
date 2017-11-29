@@ -109,7 +109,7 @@ import (
 func Testall(t *testing.T) {
 	t.Parallel()
 
-	testID := int(1)
+	// testID := int(1)
 	tests := []struct {
 		name         string
 		newCmd       func() (interface{}, error)
