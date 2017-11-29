@@ -28,11 +28,11 @@ func TestDecodeHex(t *testing.T) {
 	test2()
 }
 func Testtest() {
-	hcashdHomeDir := hcashutil.AppDataDir(".hcashd", false)
-	certs, err := ioutil.ReadFile(filepath.Join(hcashdHomeDir, "rpc.cert"))
-	if err != nil {
-		log.Fatal(err)
-	}
+	// hcashdHomeDir := hcashutil.AppDataDir(".hcashd", false)
+	// certs, err := ioutil.ReadFile(filepath.Join(hcashdHomeDir, "rpc.cert"))
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
 	// Create a new RPC client using websockets.  Since this example is
 	// not long-lived, the connection will be closed as soon as the program
@@ -60,28 +60,6 @@ func Testtest() {
 		fmt.Fprintln(os.Stderr, err)
 		// os.Exit(1)
 	}
-
-	// Choose how to display the result based on its type.
 	strResult := string(result)
-	if strings.HasPrefix(strResult, "{") || strings.HasPrefix(strResult, "[") {
-		var dst bytes.Buffer
-		if err := json.Indent(&dst, result, "", "  "); err != nil {
-			fmt.Fprintf(os.Stderr, "Failed to format result: %v",
-				err)
-			os.Exit(1)
-		}
-		fmt.Println(dst.String())
-
-	} else if strings.HasPrefix(strResult, `"`) {
-		var str string
-		if err := json.Unmarshal(result, &str); err != nil {
-			fmt.Fprintf(os.Stderr, "Failed to unmarshal result: %v",
-				err)
-			os.Exit(1)
-		}
-		fmt.Println(str)
-
-	} else if strResult != "null" {
-		fmt.Println(strResult)
-	}
+	showRet(strResult)
 }
