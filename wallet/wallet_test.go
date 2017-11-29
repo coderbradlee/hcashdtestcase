@@ -10,16 +10,11 @@ import (
 	// "strings"
 	"testing"
 	// "bufio"
-	"bytes"
-	"encoding/json"
+	
 	"fmt"
 	// "io"
 	"os"
-	"path/filepath"
-	"strings"
-	"log"
-	"io/ioutil"
-	"github.com/HcashOrg/hcashutil"
+	
 	// "github.com/HcashOrg/hcashrpcclient"
 	"github.com/HcashOrg/hcashd/hcashjson"
 )
