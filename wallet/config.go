@@ -186,7 +186,7 @@ func fileExists(name string) bool {
 // command line options.  Command line options always take precedence.
 func loadConfig(wallet bool) (*config, []string, error) {
 	// Default config.
-	fmt.Println(defaultConfigFile)
+	// fmt.Println(defaultConfigFile)
 	cfg := config{
 		ConfigFile:      defaultConfigFile,
 		RPCServer:       defaultRPCServer,

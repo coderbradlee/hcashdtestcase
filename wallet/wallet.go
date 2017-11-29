@@ -35,11 +35,11 @@ func handleCmd(cmd interface{}) {
 
 	// Send the JSON-RPC request to the server using the user-specified
 	// connection configuration.
-	connCfg,str,err:=loadConfig(true)
+	connCfg,_,err:=loadConfig(true)
 	if err!=nil{
 		fmt.Println(err)
 	}
-	fmt.Println(str)
+	// fmt.Println(str)
 	// connCfg.Wallet=true
 	result, err := sendPostRequest(marshalledJSON, connCfg)
 	if err != nil {
@@ -73,6 +73,7 @@ func showRet(result []byte) {
 	} else if strResult != "null" {
 		fmt.Println(strResult)
 	}
+	fmt.Prinln("*************************************")
 }
 func newHTTPClient(cfg *config) (*http.Client, error) {
 	// Configure proxy if needed.

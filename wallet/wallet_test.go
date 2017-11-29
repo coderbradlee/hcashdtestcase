@@ -117,53 +117,53 @@ func TestAll(t *testing.T) {
 		marshalled   string
 		unmarshalled interface{}
 	}{
-		// {
-		// 	name: "addmultisigaddress",
-		// 	newCmd: func() (interface{}, error) {
-		// 		return hcashjson.NewCmd("addmultisigaddress", 2, []string{"031234", "035678"})
-		// 	},
-		// 	staticCmd: func() interface{} {
-		// 		keys := []string{"031234", "035678"}
-		// 		return hcashjson.NewAddMultisigAddressCmd(2, keys, nil)
-		// 	},
-		// 	marshalled: `{"jsonrpc":"1.0","method":"addmultisigaddress","params":[2,["031234","035678"]],"id":1}`,
-		// 	unmarshalled: &hcashjson.AddMultisigAddressCmd{
-		// 		NRequired: 2,
-		// 		Keys:      []string{"031234", "035678"},
-		// 		Account:   nil,
-		// 	},
-		// },
-		// {
-		// 	name: "addmultisigaddress optional",
-		// 	newCmd: func() (interface{}, error) {
-		// 		return hcashjson.NewCmd("addmultisigaddress", 2, []string{"031234", "035678"}, "test")
-		// 	},
-		// 	staticCmd: func() interface{} {
-		// 		keys := []string{"031234", "035678"}
-		// 		return hcashjson.NewAddMultisigAddressCmd(2, keys, hcashjson.String("test"))
-		// 	},
-		// 	marshalled: `{"jsonrpc":"1.0","method":"addmultisigaddress","params":[2,["031234","035678"],"test"],"id":1}`,
-		// 	unmarshalled: &hcashjson.AddMultisigAddressCmd{
-		// 		NRequired: 2,
-		// 		Keys:      []string{"031234", "035678"},
-		// 		Account:   hcashjson.String("test"),
-		// 	},
-		// },
-		// {
-		// 	name: "createmultisig",
-		// 	newCmd: func() (interface{}, error) {
-		// 		return hcashjson.NewCmd("createmultisig", 2, []string{"031234", "035678"})
-		// 	},
-		// 	staticCmd: func() interface{} {
-		// 		keys := []string{"031234", "035678"}
-		// 		return hcashjson.NewCreateMultisigCmd(2, keys)
-		// 	},
-		// 	marshalled: `{"jsonrpc":"1.0","method":"createmultisig","params":[2,["031234","035678"]],"id":1}`,
-		// 	unmarshalled: &hcashjson.CreateMultisigCmd{
-		// 		NRequired: 2,
-		// 		Keys:      []string{"031234", "035678"},
-		// 	},
-		// },
+		{
+			name: "addmultisigaddress",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("addmultisigaddress", 2, []string{"031234", "035678"})
+			},
+			staticCmd: func() interface{} {
+				keys := []string{"031234", "035678"}
+				return hcashjson.NewAddMultisigAddressCmd(2, keys, nil)
+			},
+			marshalled: `{"jsonrpc":"1.0","method":"addmultisigaddress","params":[2,["031234","035678"]],"id":1}`,
+			unmarshalled: &hcashjson.AddMultisigAddressCmd{
+				NRequired: 2,
+				Keys:      []string{"031234", "035678"},
+				Account:   nil,
+			},
+		},
+		{
+			name: "addmultisigaddress optional",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("addmultisigaddress", 2, []string{"031234", "035678"}, "test")
+			},
+			staticCmd: func() interface{} {
+				keys := []string{"031234", "035678"}
+				return hcashjson.NewAddMultisigAddressCmd(2, keys, hcashjson.String("test"))
+			},
+			marshalled: `{"jsonrpc":"1.0","method":"addmultisigaddress","params":[2,["031234","035678"],"test"],"id":1}`,
+			unmarshalled: &hcashjson.AddMultisigAddressCmd{
+				NRequired: 2,
+				Keys:      []string{"031234", "035678"},
+				Account:   hcashjson.String("test"),
+			},
+		},
+		{
+			name: "createmultisig",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("createmultisig", 2, []string{"031234", "035678"})
+			},
+			staticCmd: func() interface{} {
+				keys := []string{"031234", "035678"}
+				return hcashjson.NewCreateMultisigCmd(2, keys)
+			},
+			marshalled: `{"jsonrpc":"1.0","method":"createmultisig","params":[2,["031234","035678"]],"id":1}`,
+			unmarshalled: &hcashjson.CreateMultisigCmd{
+				NRequired: 2,
+				Keys:      []string{"031234", "035678"},
+			},
+		},
 		{
 			name: "dumpprivkey",
 			newCmd: func() (interface{}, error) {
