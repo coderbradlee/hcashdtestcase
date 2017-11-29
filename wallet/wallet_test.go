@@ -121,7 +121,7 @@ func TestAll(t *testing.T) {
 		{
 			name: "accountaddressindex",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("accountaddressindex", "test",1)
+				return hcashjson.NewCmd("accountaddressindex", "test",0)
 			},
 		},
 		{
@@ -196,18 +196,18 @@ func TestAll(t *testing.T) {
 				return hcashjson.NewCmd("getmultisigoutinfo", "HcVXh2NEV7u2wkdYXcq5jjmV2WAci3CZXAJ",1)
 			},
 		},
-		{
-			name: "getnewaddress",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getnewaddress", "test")
-			},
-		},
-		{
-			name: "getnewaddress",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getnewaddress", "default")
-			},
-		},
+		// {
+		// 	name: "getnewaddress",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("getnewaddress", "test")
+		// 	},
+		// },
+		// {
+		// 	name: "getnewaddress",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("getnewaddress", "default")
+		// 	},
+		// },
 		{
 			name: "addmultisigaddress",
 			newCmd: func() (interface{}, error) {
@@ -1306,12 +1306,12 @@ func TestAll(t *testing.T) {
 		// 	},
 		// },
 	}
-	fmt.Printf("Running %d tests", len(tests))
+	fmt.Printf("Running %d tests\n", len(tests))
 	for i, test := range tests {
 		fmt.Println(test.name+":")
 		cmd, err := test.newCmd()
 		if err != nil {
-			fmt.Printf("Test #%d (%s) unexpected NewCmd error: %v ",
+			fmt.Printf("Test #%d (%s) unexpected NewCmd error: %v \n",
 				i, test.name, err)
 		}
 		handleCmd(cmd)
