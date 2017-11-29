@@ -1257,11 +1257,12 @@ func TestAll(t *testing.T) {
 		// 	},
 		// },
 	}
-	t.Logf("Running %d tests", len(tests))
+	fmt.Printf("Running %d tests", len(tests))
 	for i, test := range tests {
+		fmt.Println(test.name+":")
 		cmd, err := test.newCmd()
 		if err != nil {
-			t.Errorf("Test #%d (%s) unexpected NewCmd error: %v ",
+			fmt.Printf("Test #%d (%s) unexpected NewCmd error: %v ",
 				i, test.name, err)
 		}
 		handleCmd(cmd)
