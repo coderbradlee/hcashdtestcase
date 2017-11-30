@@ -216,7 +216,7 @@ func TestAll(t *testing.T) {
 		{
 			name: "getmultisigoutinfo",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getmultisigoutinfo", "HcRuMvn4b9YPXSDkXDv1V5fmfU2z9WjzaTd",1)
+				return hcashjson.NewCmd("getmultisigoutinfo", "522102a11323f46c390ff1ebc60ee232ffdd27267782bb27f1d394f5f18a32b587ac4c210274b50894449638ac5e6e41a03d886fe1402142d7b6b9b84ca858607da892bfb152ae",1)
 			},
 		},
 		// {
