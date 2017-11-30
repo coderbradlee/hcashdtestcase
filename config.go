@@ -18,7 +18,7 @@ import (
 
 	"github.com/btcsuite/btclog"
 	"github.com/HcashOrg/hcashutil"
-	"github.com/HcashOrg/hcashwallet/internal/cfgutil"
+	"./internal/cfgutil"
 	"github.com/HcashOrg/hcashwallet/netparams"
 	"github.com/HcashOrg/hcashwallet/ticketbuyer"
 	"github.com/HcashOrg/hcashwallet/wallet"
