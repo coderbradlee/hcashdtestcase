@@ -15,7 +15,6 @@ import (
 	"runtime"
 	"sort"
 	"strings"
-
 	"github.com/btcsuite/btclog"
 	"github.com/HcashOrg/hcashutil"
 	"./internal/cfgutil"
@@ -66,12 +65,12 @@ const (
 	defaultBalanceToMaintainAbsolute                = 0
 	defaultBalanceToMaintainRelative                = 0.3
 
-	walletDbName = "wallet.db"
+	walletDbName = "wallettest.db"
 )
 
 var (
 	hcashdDefaultCAFile  = filepath.Join(hcashutil.AppDataDir("hcashd", false), "rpc.cert")
-	defaultAppDataDir  = hcashutil.AppDataDir("hcashwallet", false)
+	defaultAppDataDir  = hcashutil.AppDataDir("/hcashdtestcase/wallet", false)
 	defaultConfigFile  = filepath.Join(defaultAppDataDir, defaultConfigFilename)
 	defaultRPCKeyFile  = filepath.Join(defaultAppDataDir, "rpc.key")
 	defaultRPCCertFile = filepath.Join(defaultAppDataDir, "rpc.cert")

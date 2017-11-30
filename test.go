@@ -144,6 +144,7 @@ func test2() {
 
 // 	return nil
 // }
+
 func testcreatewallet() {
 	_, _, err := loadConfig()
 	if err != nil {
@@ -151,5 +152,6 @@ func testcreatewallet() {
 	}
 }
 func main() {
-	test2()
+	// test2()
+	testcreatewallet()
 }

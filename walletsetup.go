@@ -13,7 +13,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-
+	"time"
 	"github.com/HcashOrg/hcashd/chaincfg"
 	"github.com/HcashOrg/hcashd/wire"
 	"github.com/HcashOrg/hcashutil/hdkeychain"
@@ -67,7 +67,14 @@ func createWallet(cfg *config) error {
 	}
 
 	fmt.Println("Creating the wallet...")
+	start := time.Now()
+	fmt.Println("start:",start)
 	_, err = loader.CreateNewWallet(pubPass, privPass, seed)
+	end := time.Now()
+	fmt.Println("end:",end)
+	delta := end.Sub(start)
+	fmt.Println("delta:",delta)
+	
 	if err != nil {
 		return err
 	}

@@ -304,6 +304,7 @@ func TestAll(t *testing.T) {
 			// 	NumBlocks: 6,
 			// },
 		},
+
 		// {
 		// 	name: "estimatepriority",
 		// 	newCmd: func() (interface{}, error) {
@@ -1002,65 +1003,48 @@ func TestAll(t *testing.T) {
 		// 		},
 		// 	},
 		// },
-		// {
-		// 	name: "sendfrom",
-		// 	newCmd: func() (interface{}, error) {
-		// 		return hcashjson.NewCmd("sendfrom", "from", "1Address", 0.5)
-		// 	},
-		// 	staticCmd: func() interface{} {
-		// 		// revised by sammy at 2017-10-27
-		// 		//return hcashjson.NewSendFromCmd("from", "1Address", 0.5, nil, nil, nil)
-		// 		return hcashjson.NewSendFromCmd("from", "1Address", 0.5, nil, nil, nil, nil)
-		// 	},
-		// 	marshalled: `{"jsonrpc":"1.0","method":"sendfrom","params":["from","1Address",0.5],"id":1}`,
-		// 	unmarshalled: &hcashjson.SendFromCmd{
-		// 		FromAccount: "from",
-		// 		ToAddress:   "1Address",
-		// 		Amount:      0.5,
-		// 		MinConf:     hcashjson.Int(1),
-		// 		Comment:     nil,
-		// 		CommentTo:   nil,
-		// 	},
-		// },
+		{
+			name: "sendfrom",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("sendfrom", "default", "HsaJLEVeMLP3TLEdS6Wg6BnbVJrCKNdCyr9", 0.5)
+			},
+			// staticCmd: func() interface{} {
+			// 	// revised by sammy at 2017-10-27
+			// 	//return hcashjson.NewSendFromCmd("from", "1Address", 0.5, nil, nil, nil)
+			// 	return hcashjson.NewSendFromCmd("from", "1Address", 0.5, nil, nil, nil, nil)
+			// },
+			// marshalled: `{"jsonrpc":"1.0","method":"sendfrom","params":["from","1Address",0.5],"id":1}`,
+			// unmarshalled: &hcashjson.SendFromCmd{
+			// 	FromAccount: "from",
+			// 	ToAddress:   "1Address",
+			// 	Amount:      0.5,
+			// 	MinConf:     hcashjson.Int(1),
+			// 	Comment:     nil,
+			// 	CommentTo:   nil,
+			// },
+		},
+		{
+			name: "getbalance",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("getbalance", "test")
+			},
+		},
+		{
+			name: "getbalance",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("getbalance", "default")
+			},
+		},
 		// {
 		// 	name: "sendfrom optional1",
 		// 	newCmd: func() (interface{}, error) {
 		// 		return hcashjson.NewCmd("sendfrom", "from", "1Address", 0.5, 6)
-		// 	},
-		// 	staticCmd: func() interface{} {
-		// 		// revised by sammy at 2017-10-27
-		// 		//return hcashjson.NewSendFromCmd("from", "1Address", 0.5, hcashjson.Int(6), nil, nil)
-		// 		return hcashjson.NewSendFromCmd("from", "1Address", 0.5, nil, hcashjson.Int(6), nil, nil)
-		// 	},
-		// 	marshalled: `{"jsonrpc":"1.0","method":"sendfrom","params":["from","1Address",0.5,6],"id":1}`,
-		// 	unmarshalled: &hcashjson.SendFromCmd{
-		// 		FromAccount: "from",
-		// 		ToAddress:   "1Address",
-		// 		Amount:      0.5,
-		// 		MinConf:     hcashjson.Int(6),
-		// 		Comment:     nil,
-		// 		CommentTo:   nil,
 		// 	},
 		// },
 		// {
 		// 	name: "sendfrom optional2",
 		// 	newCmd: func() (interface{}, error) {
 		// 		return hcashjson.NewCmd("sendfrom", "from", "1Address", 0.5, 6, "comment")
-		// 	},
-		// 	staticCmd: func() interface{} {
-		// 		// revised by sammy at 2017-10-27
-		// 		//return hcashjson.NewSendFromCmd("from", "1Address", 0.5, hcashjson.Int(6),
-		// 		return hcashjson.NewSendFromCmd("from", "1Address", 0.5, nil, hcashjson.Int(6),
-		// 			hcashjson.String("comment"), nil)
-		// 	},
-		// 	marshalled: `{"jsonrpc":"1.0","method":"sendfrom","params":["from","1Address",0.5,6,"comment"],"id":1}`,
-		// 	unmarshalled: &hcashjson.SendFromCmd{
-		// 		FromAccount: "from",
-		// 		ToAddress:   "1Address",
-		// 		Amount:      0.5,
-		// 		MinConf:     hcashjson.Int(6),
-		// 		Comment:     hcashjson.String("comment"),
-		// 		CommentTo:   nil,
 		// 	},
 		// },
 		// {
@@ -1070,36 +1054,11 @@ func TestAll(t *testing.T) {
 		// 		//return hcashjson.NewCmd("sendfrom", "from", "1Address", 0.5, 6, "comment", "commentto")
 		// 		return hcashjson.NewCmd("sendfrom", "from", "1Address", 0.5, nil, 6, "comment", "commentto")
 		// 	},
-		// 	staticCmd: func() interface{} {
-		// 		// revised by sammy at 2017-10-27
-		// 		return hcashjson.NewSendFromCmd("from", "1Address", 0.5, hcashjson.Int(6), hcashjson.Int(6),
-		// 			hcashjson.String("comment"), hcashjson.String("commentto"))
-		// 	},
-		// 	marshalled: `{"jsonrpc":"1.0","method":"sendfrom","params":["from","1Address",0.5,6,"comment","commentto"],"id":1}`,
-		// 	unmarshalled: &hcashjson.SendFromCmd{
-		// 		FromAccount: "from",
-		// 		ToAddress:   "1Address",
-		// 		Amount:      0.5,
-		// 		MinConf:     hcashjson.Int(6),
-		// 		Comment:     hcashjson.String("comment"),
-		// 		CommentTo:   hcashjson.String("commentto"),
-		// 	},
 		// },
 		// {
 		// 	name: "sendmany",
 		// 	newCmd: func() (interface{}, error) {
 		// 		return hcashjson.NewCmd("sendmany", "from", `{"1Address":0.5}`)
-		// 	},
-		// 	staticCmd: func() interface{} {
-		// 		amounts := map[string]float64{"1Address": 0.5}
-		// 		return hcashjson.NewSendManyCmd("from", amounts, nil, nil)
-		// 	},
-		// 	marshalled: `{"jsonrpc":"1.0","method":"sendmany","params":["from",{"1Address":0.5}],"id":1}`,
-		// 	unmarshalled: &hcashjson.SendManyCmd{
-		// 		FromAccount: "from",
-		// 		Amounts:     map[string]float64{"1Address": 0.5},
-		// 		MinConf:     hcashjson.Int(1),
-		// 		Comment:     nil,
 		// 	},
 		// },
 		// {
@@ -1107,33 +1066,11 @@ func TestAll(t *testing.T) {
 		// 	newCmd: func() (interface{}, error) {
 		// 		return hcashjson.NewCmd("sendmany", "from", `{"1Address":0.5}`, 6)
 		// 	},
-		// 	staticCmd: func() interface{} {
-		// 		amounts := map[string]float64{"1Address": 0.5}
-		// 		return hcashjson.NewSendManyCmd("from", amounts, hcashjson.Int(6), nil)
-		// 	},
-		// 	marshalled: `{"jsonrpc":"1.0","method":"sendmany","params":["from",{"1Address":0.5},6],"id":1}`,
-		// 	unmarshalled: &hcashjson.SendManyCmd{
-		// 		FromAccount: "from",
-		// 		Amounts:     map[string]float64{"1Address": 0.5},
-		// 		MinConf:     hcashjson.Int(6),
-		// 		Comment:     nil,
-		// 	},
 		// },
 		// {
 		// 	name: "sendmany optional2",
 		// 	newCmd: func() (interface{}, error) {
 		// 		return hcashjson.NewCmd("sendmany", "from", `{"1Address":0.5}`, 6, "comment")
-		// 	},
-		// 	staticCmd: func() interface{} {
-		// 		amounts := map[string]float64{"1Address": 0.5}
-		// 		return hcashjson.NewSendManyCmd("from", amounts, hcashjson.Int(6), hcashjson.String("comment"))
-		// 	},
-		// 	marshalled: `{"jsonrpc":"1.0","method":"sendmany","params":["from",{"1Address":0.5},6,"comment"],"id":1}`,
-		// 	unmarshalled: &hcashjson.SendManyCmd{
-		// 		FromAccount: "from",
-		// 		Amounts:     map[string]float64{"1Address": 0.5},
-		// 		MinConf:     hcashjson.Int(6),
-		// 		Comment:     hcashjson.String("comment"),
 		// 	},
 		// },
 		// {
@@ -1143,18 +1080,6 @@ func TestAll(t *testing.T) {
 		// 		//return hcashjson.NewCmd("sendtoaddress", "1Address", 0.5)
 		// 		return hcashjson.NewCmd("sendtoaddress", "1Address", 0.5, 0)
 		// 	},
-		// 	staticCmd: func() interface{} {
-		// 		// revised by sammy 2017-10-27
-		// 		//return hcashjson.NewSendToAddressCmd("1Address", 0.5, nil, nil)
-		// 		return hcashjson.NewSendToAddressCmd("1Address", 0.5, 0, nil, nil)
-		// 	},
-		// 	marshalled: `{"jsonrpc":"1.0","method":"sendtoaddress","params":["1Address",0.5],"id":1}`,
-		// 	unmarshalled: &hcashjson.SendToAddressCmd{
-		// 		Address:   "1Address",
-		// 		Amount:    0.5,
-		// 		Comment:   nil,
-		// 		CommentTo: nil,
-		// 	},
 		// },
 		// {
 		// 	name: "sendtoaddress optional1",
@@ -1162,19 +1087,6 @@ func TestAll(t *testing.T) {
 		// 		// revised by sammy at 2017-10-27
 		// 		//return hcashjson.NewCmd("sendtoaddress", "1Address", 0.5, "comment", "commentto")
 		// 		return hcashjson.NewCmd("sendtoaddress", "1Address", 0.5, 0, "comment", "commentto")
-		// 	},
-		// 	staticCmd: func() interface{} {
-		// 		// revised by sammy at 2017-10-27
-		// 		//return hcashjson.NewSendToAddressCmd("1Address", 0.5, hcashjson.String("comment"),
-		// 		return hcashjson.NewSendToAddressCmd("1Address", 0.5, 0, hcashjson.String("comment"),
-		// 			hcashjson.String("commentto"))
-		// 	},
-		// 	marshalled: `{"jsonrpc":"1.0","method":"sendtoaddress","params":["1Address",0.5,"comment","commentto"],"id":1}`,
-		// 	unmarshalled: &hcashjson.SendToAddressCmd{
-		// 		Address:   "1Address",
-		// 		Amount:    0.5,
-		// 		Comment:   hcashjson.String("comment"),
-		// 		CommentTo: hcashjson.String("commentto"),
 		// 	},
 		// },
 		// {
@@ -1341,3 +1253,4 @@ func TestAll(t *testing.T) {
 	}
 
 }
+

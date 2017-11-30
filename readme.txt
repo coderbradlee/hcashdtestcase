@@ -35,4 +35,6 @@ HsEvRq9fxQ4pW5AJr1Cffia3zzepEELiQry
 	master/purposecode/coincode/account 这个路径的公钥？
 2、hcashwallet gui启动会启动hcashd、hcashwallet及hcashctl，其中hcashd没挖矿的情况下占用cpu高，但linux版的没问题
 
-3、
+3、hcashwallet.conf 连接到hcashd端口地址不可配置
+
+4、
