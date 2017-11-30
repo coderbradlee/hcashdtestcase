@@ -5,7 +5,7 @@ import (
 	"github.com/HcashOrg/hcashutil"
 	// "github.com/HcashOrg/hcashd/wire"
 	"io/ioutil"
-	"log"
+	// "log"
 	"path/filepath"
 	"time"
 	"bufio"
