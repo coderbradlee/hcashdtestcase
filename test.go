@@ -145,7 +145,7 @@ func test2() {
 // 	return nil
 // }
 func testcreatewallet() {
-	tcfg, _, err := loadConfig()
+	_, _, err := loadConfig()
 	if err != nil {
 		fmt.Println(err) 
 	}
