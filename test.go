@@ -20,7 +20,7 @@ func test1() {
 	hcashdHomeDir := hcashutil.AppDataDir(".hcashd", false)
 	certs, err := ioutil.ReadFile(filepath.Join(hcashdHomeDir, "rpc.cert"))
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
 	}
 
 	// Create a new RPC client using websockets.  Since this example is
@@ -35,7 +35,7 @@ func test1() {
 	}
 	client, err := hcashrpcclient.New(connCfg, nil)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
 	}
 	defer client.Shutdown()
 
@@ -45,29 +45,29 @@ func test1() {
 	genesisHashStr := "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
 	blockHash, err := chainhash.NewHashFromStr(genesisHashStr)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
 	}
 	block, err := client.GetBlockVerbose(blockHash, false)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
 	}
 
 	// Display some details about the returned block.
-	log.Printf("Hash: %v\n", block.Hash)
-	log.Printf("Previous Block: %v\n", block.PreviousHash)
-	log.Printf("Next Block: %v\n", block.NextHash)
-	log.Printf("Merkle root: %v\n", block.MerkleRoot)
-	log.Printf("Timestamp: %v\n", time.Unix(block.Time, 0).UTC())
-	log.Printf("Confirmations: %v\n", block.Confirmations)
-	log.Printf("Difficulty: %f\n", block.Difficulty)
-	log.Printf("Size (in bytes): %v\n", block.Size)
-	log.Printf("Num transactions: %v\n", len(block.Tx))
+	fmt.Printf("Hash: %v\n", block.Hash)
+	fmt.Printf("Previous Block: %v\n", block.PreviousHash)
+	fmt.Printf("Next Block: %v\n", block.NextHash)
+	fmt.Printf("Merkle root: %v\n", block.MerkleRoot)
+	fmt.Printf("Timestamp: %v\n", time.Unix(block.Time, 0).UTC())
+	fmt.Printf("Confirmations: %v\n", block.Confirmations)
+	fmt.Printf("Difficulty: %f\n", block.Difficulty)
+	fmt.Printf("Size (in bytes): %v\n", block.Size)
+	fmt.Printf("Num transactions: %v\n", len(block.Tx))
 }
 func test2() {
 	hcashdHomeDir := hcashutil.AppDataDir(".hcashd", false)
 	certs, err := ioutil.ReadFile(filepath.Join(hcashdHomeDir, "rpc.cert"))
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
 	}
 
 	// Create a new RPC client using websockets.  Since this example is
@@ -82,16 +82,16 @@ func test2() {
 	}
 	client, err := hcashrpcclient.New(connCfg, nil)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
 	}
 	defer client.Shutdown()
 
 	// Query the RPC server for the current block count and display it.
 	blockCount, err := client.GetBlockCount()
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
 	}
-	log.Printf("Block count: %d", blockCount)
+	fmt.Printf("Block count: %d", blockCount)
 }
 // networkDir returns the directory name of a network directory to hold wallet
 // files.
