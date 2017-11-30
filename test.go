@@ -8,11 +8,11 @@ import (
 	// "log"
 	"path/filepath"
 	"time"
-	"bufio"
+	// "bufio"
 	"fmt"
 	"github.com/HcashOrg/hcashd/chaincfg/chainhash"
-	"github.com/HcashOrg/hcashwallet/loader"
-	"github.com/HcashOrg/hcashd/chaincfg"
+	// "github.com/HcashOrg/hcashwallet/loader"
+	// "github.com/HcashOrg/hcashd/chaincfg"
 )
 func test1() {
 	// Load the certificate for the TLS connection which is automatically
