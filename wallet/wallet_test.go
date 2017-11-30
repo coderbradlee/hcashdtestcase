@@ -138,7 +138,7 @@ func TestAll(t *testing.T) {
 		{
 			name: "createnewaccount",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("createnewaccount", "test1")
+				return hcashjson.NewCmd("createnewaccount", "test")
 			},
 		},
 		{
