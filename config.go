@@ -25,7 +25,7 @@ import (
 	"github.com/HcashOrg/hcashwallet/wallet/txrules"
 	flags "github.com/jessevdk/go-flags"
 )
-
+var activeNet = &netparams.MainNetParams
 const (
 	defaultCAFilename          = "hcashd.cert"
 	defaultConfigFilename      = "hcashwallet.conf"

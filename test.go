@@ -11,6 +11,7 @@ import (
 	"bufio"
 	"github.com/HcashOrg/hcashd/chaincfg/chainhash"
 	"github.com/HcashOrg/hcashwallet/loader"
+	"github.com/HcashOrg/hcashd/chaincfg"
 )
 func test1() {
 	// Load the certificate for the TLS connection which is automatically
