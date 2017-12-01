@@ -40,3 +40,13 @@ HsEvRq9fxQ4pW5AJr1Cffia3zzepEELiQry
 4、gui异常退出后hcashd有可能没有退出，且占cpu高
 
 5、hcashd.conf里的配置  datadir=~/.hcashd必须默认，更改为其他地方会带来找不到数据库的问题，因为其他一些信息比如认证文件等还是在~/.hcashd并没有更改位置
+
+Your wallet generation seed is:
+skullcap yesteryear ragtime pedigree surmount typewriter 
+Zulu infancy tumor direction egghead inferno 
+woodlark paramount berserk caravan woodlark opulent 
+stagnate voyager hockey borderline enlist Waterloo 
+kiwi hemisphere steamship impetus scenic paperweight 
+fracture vacancy accrue 
+
+Hex: bdfea0aadae8ff7aec4a567bfea81e25fe9fd0f773185af97c6fd476b4a565f1
