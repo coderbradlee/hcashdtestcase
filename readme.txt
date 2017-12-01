@@ -37,4 +37,6 @@ HsEvRq9fxQ4pW5AJr1Cffia3zzepEELiQry
 
 3、hcashwallet.conf 连接到hcashd端口地址不可配置
 
-4、
+4、gui异常退出后hcashd有可能没有退出，且占cpu高
+
+5、hcashd.conf里的配置  datadir=~/.hcashd必须默认，更改为其他地方会带来找不到数据库的问题，因为其他一些信息比如认证文件等还是在~/.hcashd并没有更改位置
