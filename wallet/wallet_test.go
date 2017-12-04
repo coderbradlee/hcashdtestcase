@@ -1038,7 +1038,7 @@ func TestAll(t *testing.T) {
 		{
 			name: "listunspent 1 999999 [\"Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB\"]",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("listunspent", 1,999999,[]string("Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB"))
+				return hcashjson.NewCmd("listunspent", 1,999999,[]string{"Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB"})
 			},
 		},
 		{
