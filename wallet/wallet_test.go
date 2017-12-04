@@ -1018,7 +1018,7 @@ func TestAll(t *testing.T) {
 		{
 			name: "sendfrom default Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("sendfrom", "default", "Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB", 1.0)
+				return hcashjson.NewCmd("sendfrom", "default", "SsmhMCEauFfVhubiGG7wKkGgNfCsk42baQ9", 1.0)
 			},
 			// staticCmd: func() interface{} {
 			// 	// revised by sammy at 2017-10-27
@@ -1038,7 +1038,7 @@ func TestAll(t *testing.T) {
 		{
 			name: "listunspent 1 999999 [\"Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB\"]",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("listunspent", 1,999999,[]string{"Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB"})
+				return hcashjson.NewCmd("listunspent", 1,999999,[]string{"SsmhMCEauFfVhubiGG7wKkGgNfCsk42baQ9"})
 			},
 		},
 		{
