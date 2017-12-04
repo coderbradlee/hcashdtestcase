@@ -150,13 +150,13 @@ func TestAll(t *testing.T) {
 		{
 			name: "getaccount",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getaccount", "HsPfMqukBtSP47Kfjc56eovGdoMGgKe5suD")
+				return hcashjson.NewCmd("getaccount", "SsizBEwgS8qAzsakuywk9BzGVKr8DZfqEu4")
 			},
 		},
 		{
 			name: "getaccount",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getaccount", "HsPfMqukBtSP47Kfjc56eovGdoMGgKe5suD")
+				return hcashjson.NewCmd("getaccount", "Ssp6kUQx3eidjKuiZGsF7cao65DQHVintUC")
 			},
 		},
 		{
@@ -234,7 +234,7 @@ func TestAll(t *testing.T) {
 		{
 			name: "addmultisigaddress",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("addmultisigaddress", 2, []string{"HsPfMqukBtSP47Kfjc56eovGdoMGgKe5suD", "HsZ63qkazmoWa6ynHkmgKttZz56qJKjQFGs"})
+				return hcashjson.NewCmd("addmultisigaddress", 2, []string{"SsizBEwgS8qAzsakuywk9BzGVKr8DZfqEu4", "Ssp6kUQx3eidjKuiZGsF7cao65DQHVintUC"})
 			},
 			// staticCmd: func() interface{} {
 			// 	keys := []string{"031234", "035678"}
@@ -250,7 +250,7 @@ func TestAll(t *testing.T) {
 		{
 			name: "addmultisigaddress optional",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("addmultisigaddress", 2, []string{"HsPfMqukBtSP47Kfjc56eovGdoMGgKe5suD", "HsZ63qkazmoWa6ynHkmgKttZz56qJKjQFGs"}, "test")
+				return hcashjson.NewCmd("addmultisigaddress", 2, []string{"SsizBEwgS8qAzsakuywk9BzGVKr8DZfqEu4", "Ssp6kUQx3eidjKuiZGsF7cao65DQHVintUC"}, "default")
 			},
 			// staticCmd: func() interface{} {
 			// 	keys := []string{"031234", "035678"}
@@ -266,7 +266,7 @@ func TestAll(t *testing.T) {
 		{
 			name: "createmultisig",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("createmultisig", 2, []string{"HsPfMqukBtSP47Kfjc56eovGdoMGgKe5suD", "HsZ63qkazmoWa6ynHkmgKttZz56qJKjQFGs"})
+				return hcashjson.NewCmd("createmultisig", 2, []string{"SsizBEwgS8qAzsakuywk9BzGVKr8DZfqEu4", "Ssp6kUQx3eidjKuiZGsF7cao65DQHVintUC"})
 			},
 			// staticCmd: func() interface{} {
 			// 	keys := []string{"031234", "035678"}
@@ -281,7 +281,7 @@ func TestAll(t *testing.T) {
 		{
 			name: "dumpprivkey",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("dumpprivkey", "HsPfMqukBtSP47Kfjc56eovGdoMGgKe5suD")
+				return hcashjson.NewCmd("dumpprivkey", "Ssp6kUQx3eidjKuiZGsF7cao65DQHVintUC")
 			},
 			// staticCmd: func() interface{} {
 			// 	return hcashjson.NewDumpPrivKeyCmd("1Address")
@@ -1006,7 +1006,7 @@ func TestAll(t *testing.T) {
 		{
 			name: "sendfrom",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("sendfrom", "default", "HsZ63qkazmoWa6ynHkmgKttZz56qJKjQFGs", 0.5)
+				return hcashjson.NewCmd("sendfrom", "default", "Ssp6kUQx3eidjKuiZGsF7cao65DQHVintUC", 0.5)
 			},
 			// staticCmd: func() interface{} {
 			// 	// revised by sammy at 2017-10-27
@@ -1022,6 +1022,12 @@ func TestAll(t *testing.T) {
 			// 	Comment:     nil,
 			// 	CommentTo:   nil,
 			// },
+		},
+		{
+			name: "listreceivedbyaddress",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("listreceivedbyaddress", 2,true)
+			},
 		},
 		{
 			name: "getbalance",
