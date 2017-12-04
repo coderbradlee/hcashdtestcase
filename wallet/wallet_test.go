@@ -1018,7 +1018,7 @@ func TestAll(t *testing.T) {
 		{
 			name: "sendfrom default Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("sendfrom", "default", "Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB", 1)
+				return hcashjson.NewCmd("sendfrom", "default", "Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB", 1.0)
 			},
 			// staticCmd: func() interface{} {
 			// 	// revised by sammy at 2017-10-27
