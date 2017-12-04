@@ -1016,10 +1016,10 @@ func TestAll(t *testing.T) {
 			},
 		},
 		{
-			name: "sendfrom default Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("sendfrom", "default", "SsmhMCEauFfVhubiGG7wKkGgNfCsk42baQ9", 1.0)
-			},
+			// name: "sendfrom default Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB",
+			// newCmd: func() (interface{}, error) {
+			// 	return hcashjson.NewCmd("sendfrom", "default", "SsmhMCEauFfVhubiGG7wKkGgNfCsk42baQ9", 1.0)
+			// },
 			// staticCmd: func() interface{} {
 			// 	// revised by sammy at 2017-10-27
 			// 	//return hcashjson.NewSendFromCmd("from", "1Address", 0.5, nil, nil, nil)
