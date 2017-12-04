@@ -117,108 +117,108 @@ func TestAll(t *testing.T) {
 		marshalled   string
 		unmarshalled interface{}
 	}{
-		{
-			name: "accountaddressindex",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("accountaddressindex", "default",0)
-			},
-		},
-		{
-			name: "accountaddressindex",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("accountaddressindex", "test",0)
-			},
-		},
-		{
-			name: "accountsyncaddressindex",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("accountsyncaddressindex", "default",0,0)
-			},
-		},
-		{
-			name: "createnewaccount",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("createnewaccount", "test")
-			},
-		},
-		{
-			name: "listaccounts",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("listaccounts")
-			},
-		},
-		{
-			name: "getaccount",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getaccount", "SsizBEwgS8qAzsakuywk9BzGVKr8DZfqEu4")
-			},
-		},
-		{
-			name: "getaccount",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getaccount", "Ssp6kUQx3eidjKuiZGsF7cao65DQHVintUC")
-			},
-		},
-		{
-			name: "getaccount",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getaccount", "HsPfMqukBtSP47Kfjc56eovGdoMGgKe5suD")
-			},
-		},
-		{
-			name: "getaccountaddress",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getaccountaddress", "test")
-			},
-		},
-		{
-			name: "getaccountaddress",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getaccountaddress", "default")
-			},
-		},
-		{
-			name: "getaddressesbyaccount",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getaddressesbyaccount", "default")
-			},
-		},
-		{
-			name: "getaddressesbyaccount",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getaddressesbyaccount", "test")
-			},
-		},
-		{
-			name: "getbalance",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getbalance", "test")
-			},
-		},
-		{
-			name: "getbalance",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getbalance", "default")
-			},
-		},
-		{
-			name: "getmasterpubkey",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getmasterpubkey", "default")
-			},
-		},
-		{
-			name: "getmasterpubkey",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getmasterpubkey", "test")
-			},
-		},
-		{
-			name: "getmultisigoutinfo",
-			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("getmultisigoutinfo", "522102a11323f46c390ff1ebc60ee232ffdd27267782bb27f1d394f5f18a32b587ac4c210274b50894449638ac5e6e41a03d886fe1402142d7b6b9b84ca858607da892bfb152ae",1)
-			},
-		},
+		// {
+		// 	name: "accountaddressindex",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("accountaddressindex", "default",0)
+		// 	},
+		// },
+		// {
+		// 	name: "accountaddressindex",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("accountaddressindex", "test",0)
+		// 	},
+		// },
+		// {
+		// 	name: "accountsyncaddressindex",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("accountsyncaddressindex", "default",0,0)
+		// 	},
+		// },
+		// {
+		// 	name: "createnewaccount",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("createnewaccount", "test")
+		// 	},
+		// },
+		// {
+		// 	name: "listaccounts",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("listaccounts")
+		// 	},
+		// },
+		// {
+		// 	name: "getaccount",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("getaccount", "SsizBEwgS8qAzsakuywk9BzGVKr8DZfqEu4")
+		// 	},
+		// },
+		// {
+		// 	name: "getaccount",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("getaccount", "Ssp6kUQx3eidjKuiZGsF7cao65DQHVintUC")
+		// 	},
+		// },
+		// {
+		// 	name: "getaccount",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("getaccount", "HsPfMqukBtSP47Kfjc56eovGdoMGgKe5suD")
+		// 	},
+		// },
+		// {
+		// 	name: "getaccountaddress",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("getaccountaddress", "test")
+		// 	},
+		// },
+		// {
+		// 	name: "getaccountaddress",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("getaccountaddress", "default")
+		// 	},
+		// },
+		// {
+		// 	name: "getaddressesbyaccount",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("getaddressesbyaccount", "default")
+		// 	},
+		// },
+		// {
+		// 	name: "getaddressesbyaccount",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("getaddressesbyaccount", "test")
+		// 	},
+		// },
+		// {
+		// 	name: "getbalance",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("getbalance", "test")
+		// 	},
+		// },
+		// {
+		// 	name: "getbalance",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("getbalance", "default")
+		// 	},
+		// },
+		// {
+		// 	name: "getmasterpubkey",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("getmasterpubkey", "default")
+		// 	},
+		// },
+		// {
+		// 	name: "getmasterpubkey",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("getmasterpubkey", "test")
+		// 	},
+		// },
+		// {
+		// 	name: "getmultisigoutinfo",
+		// 	newCmd: func() (interface{}, error) {
+		// 		return hcashjson.NewCmd("getmultisigoutinfo", "522102a11323f46c390ff1ebc60ee232ffdd27267782bb27f1d394f5f18a32b587ac4c210274b50894449638ac5e6e41a03d886fe1402142d7b6b9b84ca858607da892bfb152ae",1)
+		// 	},
+		// },
 		// {
 		// 	name: "getnewaddress",
 		// 	newCmd: func() (interface{}, error) {
@@ -1004,9 +1004,21 @@ func TestAll(t *testing.T) {
 		// 	},
 		// },
 		{
-			name: "sendfrom",
+			name: "getbalance test",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("sendfrom", "default", "Ssp6kUQx3eidjKuiZGsF7cao65DQHVintUC", 0.5)
+				return hcashjson.NewCmd("getbalance", "test")
+			},
+		},
+		{
+			name: "getbalance default",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("getbalance", "default")
+			},
+		},
+		{
+			name: "sendfrom default Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB",
+			newCmd: func() (interface{}, error) {
+				return hcashjson.NewCmd("sendfrom", "default", "Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB", 1)
 			},
 			// staticCmd: func() interface{} {
 			// 	// revised by sammy at 2017-10-27
@@ -1024,19 +1036,19 @@ func TestAll(t *testing.T) {
 			// },
 		},
 		{
-			name: "listreceivedbyaddress",
+			name: "listunspent 1 999999 [\"Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB\"]",
 			newCmd: func() (interface{}, error) {
-				return hcashjson.NewCmd("listreceivedbyaddress", 2,true)
+				return hcashjson.NewCmd("listunspent", 1,999999,[]string("Ssim926zFHTKtZh3J7YJP3vrdRR5sEJzhHB"))
 			},
 		},
 		{
-			name: "getbalance",
+			name: "getbalance test",
 			newCmd: func() (interface{}, error) {
 				return hcashjson.NewCmd("getbalance", "test")
 			},
 		},
 		{
-			name: "getbalance",
+			name: "getbalance default",
 			newCmd: func() (interface{}, error) {
 				return hcashjson.NewCmd("getbalance", "default")
 			},
