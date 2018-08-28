@@ -50,3 +50,42 @@ kiwi hemisphere steamship impetus scenic paperweight
 fracture vacancy accrue 
 
 Hex: bdfea0aadae8ff7aec4a567bfea81e25fe9fd0f773185af97c6fd476b4a565f1
+
+
+
+https://docs.decred.org/getting-started/user-guides/agenda-voting/#voting-preparation 投票过程
+
+winningTickets：选出幸运的投票
+calcNextRequiredDifficulty：计算下一个PoW的难度
+calcNextRequiredStakeDifficulty：计算下一个PoS的难度
+CreatePremineBlock：制作下个区块模板
+NextBlock
+交易类型：
+Regular：正常的交易
+SStx (fresh stake tickets)：
+SSGen (votes)：
+SSRtx (revocations for missed tickets)
+
+
+//买票相关
+./hcashctl -C ./testhcashctl.conf --wallet purchaseticket "default" 1000
+[
+  "d15b82f87befb51a56d2101cd040d6bd6ed6d27e4e52ba91978e7879a90b73ed"
+]
+
+./hcashctl -C ./testhcashctl.conf --wallet getvotechoices
+{
+  "version": 5,
+  "choices": [
+    {
+      "agendaid": "sdiffalgorithm",
+      "agendadescription": "Change stake difficulty algorithm as defined in DCP0001",
+      "choiceid": "abstain",
+      "choicedescription": "abstain voting for change"
+    }
+  ]
+}
+
+./hcashctl -C ./testhcashctl.conf --wallet setvotechoice sdiffalgorithm yes
+
+./hcashctl -C ./testhcashctl.conf --wallet sendtossgen "default" "d15b82f87befb51a56d2101cd040d6bd6ed6d27e4e52ba91978e7879a90b73ed" "0000cf4919bf268129cac05abc539754285bfcdf5ebae8171d58bdcdf8c212b8" 142 votebits ("comment")
